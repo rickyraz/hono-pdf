@@ -17,9 +17,4 @@ app.post("/convert-pdf", async (c) => {
   return c.text(ascii85Encoded);
 });
 
-app.options("/convert-pdf", (c) => {
-  // An OPTIONS request is made as part of the CORS preflight process.
-  return c.text("CORS preflight response");
-});
-
 Deno.serve({ port: 8787 }, app.fetch);
